@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit your fiction, poetry, or creative nonfiction to Claude Literary Magazine.">
+    <title>Submissions - Claude Literary Magazine</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="index.html">Claude Literary Magazine</a>
+                </h1>
+                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="issue-01-halloween.html">Current Issue</a></li>
+                        <li><a href="archive.html">Archive</a></li>
+                        <li><a href="submissions.html" class="active">Submit</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">Submit Your Work</h2>
+            <p class="hero-subtitle">We welcome fiction, poetry, and creative nonfiction</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-container">
+        <section class="section">
+
+            <!-- Submission Guidelines -->
+            <div style="background-color: var(--color-off-white); padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); border-left: 3px solid var(--color-accent);">
+                <h3>Submission Guidelines</h3>
+
+                <h4 style="margin-top: var(--spacing-md);">What We're Looking For</h4>
+                <p>Claude Literary Magazine seeks exceptional literary writing that demonstrates craft, originality, and voice. We publish:</p>
+                <ul style="margin-left: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                    <li><strong>Fiction:</strong> Short stories up to 7,000 words</li>
+                    <li><strong>Poetry:</strong> Up to 5 poems per submission</li>
+                    <li><strong>Creative Nonfiction:</strong> Essays and memoirs up to 5,000 words</li>
+                </ul>
+
+                <h4 style="margin-top: var(--spacing-md);">Submission Requirements</h4>
+                <ul style="margin-left: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                    <li>Previously unpublished work only</li>
+                    <li>Simultaneous submissions accepted (please notify us immediately if your work is accepted elsewhere)</li>
+                    <li>One submission per genre per reading period</li>
+                    <li>Standard manuscript format: double-spaced, 12-point font, 1-inch margins</li>
+                    <li>Include a brief third-person bio (100 words or less)</li>
+                    <li>Response time: 8-12 weeks</li>
+                </ul>
+
+                <h4 style="margin-top: var(--spacing-md);">Reading Periods</h4>
+                <ul style="margin-left: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                    <li><strong>General Submissions:</strong> January 1 - March 31, August 1 - October 31</li>
+                    <li><strong>Themed Issues:</strong> Check our website for special calls</li>
+                </ul>
+
+                <h4 style="margin-top: var(--spacing-md);">AI Policy</h4>
+                <p>We accept only human-authored work. Please see our <a href="about.html#ai-policy">complete AI policy</a> for details on ethical use of AI tools during the writing process.</p>
+
+                <h4 style="margin-top: var(--spacing-md);">Rights</h4>
+                <p>We acquire First North American Serial Rights. All other rights revert to the author upon publication. We request that you acknowledge first publication in Claude Literary Magazine in future reprints.</p>
+            </div>
+
+            <!-- Submission Form -->
+            <div class="form-container">
+                <h3 class="section-title">Submission Form</h3>
+
+                <form id="submission-form" action="https://formsubmit.co/editor@claudelitmag.fake" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Submission to Claude Literary Magazine">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <!-- Author Information -->
+                    <div class="form-group">
+                        <label for="author-name" class="form-label">
+                            Your Name <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="author-name"
+                            name="author_name"
+                            class="form-input"
+                            required
+                            placeholder="Jane Doe"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author-email" class="form-label">
+                            Email Address <span class="required">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="author-email"
+                            name="author_email"
+                            class="form-input"
+                            required
+                            placeholder="you@example.com"
+                        >
+                        <p class="form-helper">We'll use this to contact you about your submission</p>
+                    </div>
+
+                    <!-- Submission Details -->
+                    <div class="form-group">
+                        <label for="work-title" class="form-label">
+                            Title of Work <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="work-title"
+                            name="work_title"
+                            class="form-input"
+                            required
+                            placeholder="The Title of Your Piece"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category" class="form-label">
+                            Category <span class="required">*</span>
+                        </label>
+                        <select id="category" name="category" class="form-select" required>
+                            <option value="">-- Select a category --</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="creative-nonfiction">Creative Nonfiction</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="word-count" class="form-label">
+                            Word Count <span class="required">*</span>
+                        </label>
+                        <input
+                            type="number"
+                            id="word-count"
+                            name="word_count"
+                            class="form-input"
+                            required
+                            min="1"
+                            placeholder="2500"
+                        >
+                        <p class="form-helper">Fiction: up to 7,000 words | Creative Nonfiction: up to 5,000 words</p>
+                    </div>
+
+                    <!-- Cover Letter -->
+                    <div class="form-group">
+                        <label for="cover-letter" class="form-label">
+                            Cover Letter
+                        </label>
+                        <textarea
+                            id="cover-letter"
+                            name="cover_letter"
+                            class="form-textarea"
+                            placeholder="Optional: Tell us a bit about your work and yourself"
+                            maxlength="1000"
+                            style="min-height: 120px;"
+                        ></textarea>
+                        <div class="character-count">
+                            <span id="cover-letter-count">0</span> / 1000 characters
+                        </div>
+                    </div>
+
+                    <!-- Submission Text -->
+                    <div class="form-group">
+                        <label for="submission-text" class="form-label">
+                            Your Work <span class="required">*</span>
+                        </label>
+                        <textarea
+                            id="submission-text"
+                            name="submission_text"
+                            class="form-textarea"
+                            required
+                            placeholder="Paste your work here. Please use standard manuscript format."
+                        ></textarea>
+                        <div class="character-count">
+                            <span id="submission-count">0</span> characters | <span id="submission-words">0</span> words
+                        </div>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="form-group">
+                        <label for="author-bio" class="form-label">
+                            Author Bio <span class="required">*</span>
+                        </label>
+                        <textarea
+                            id="author-bio"
+                            name="author_bio"
+                            class="form-textarea"
+                            required
+                            placeholder="Brief third-person bio (100 words or less)"
+                            maxlength="600"
+                            style="min-height: 120px;"
+                        ></textarea>
+                        <div class="character-count">
+                            <span id="bio-count">0</span> / 600 characters
+                        </div>
+                        <p class="form-helper">Example: "Jane Doe's fiction has appeared in... She lives in..."</p>
+                    </div>
+
+                    <!-- Simultaneous Submission -->
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                            <input
+                                type="checkbox"
+                                id="simultaneous"
+                                name="simultaneous_submission"
+                                value="yes"
+                            >
+                            <span class="form-label" style="margin: 0;">This is a simultaneous submission</span>
+                        </label>
+                        <p class="form-helper">Check this box if you're submitting this work to other publications</p>
+                    </div>
+
+                    <!-- AI Attestation -->
+                    <div class="form-group">
+                        <label style="display: flex; align-items: flex-start; gap: var(--spacing-xs); cursor: pointer;">
+                            <input
+                                type="checkbox"
+                                id="human-authored"
+                                name="human_authored"
+                                value="yes"
+                                required
+                            >
+                            <span class="form-label" style="margin: 0;">
+                                I attest that this work is human-authored <span class="required">*</span>
+                            </span>
+                        </label>
+                        <p class="form-helper" style="margin-left: calc(var(--spacing-xs) + 1em);">
+                            By checking this box, you confirm that this work was written by you, not generated by AI. See our <a href="about.html#ai-policy">AI policy</a> for details.
+                        </p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <button type="submit" class="form-button" id="submit-button">
+                            Submit Your Work
+                        </button>
+                    </div>
+
+                    <!-- Form Message -->
+                    <div id="form-message" class="form-message" style="display: none;"></div>
+                </form>
+            </div>
+
+            <!-- Additional Information -->
+            <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-text-secondary);">
+                <h3>Questions?</h3>
+                <p>If you have questions about the submission process, please review our <a href="about.html">About page</a> which includes information about our peer review process and editorial policies.</p>
+                <p>For technical issues with the submission form, please email <a href="mailto:editor@claudelitmag.fake">editor@claudelitmag.fake</a>.</p>
+
+                <h4 style="margin-top: var(--spacing-md);">What Happens Next?</h4>
+                <ol style="margin-left: var(--spacing-md);">
+                    <li>You'll receive an automated confirmation email</li>
+                    <li>Your submission enters our blind review process</li>
+                    <li>Multiple editors review your work</li>
+                    <li>You'll hear back within 8-12 weeks</li>
+                    <li>If accepted, we'll work with you on any final edits before publication</li>
+                </ol>
+
+                <p style="margin-top: var(--spacing-md);"><strong>Thank you for considering Claude Literary Magazine!</strong></p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="issue-01-halloween.html">Current Issue</a></li>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="submissions.html">Submit</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <p class="copyright">&copy; 2025 Claude Literary Magazine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/submissions.js"></script>
+</body>
+</html>
